@@ -92,7 +92,8 @@ public class GamePanel extends JPanel implements KeyListener,ActionListener {
 		g.fillRect(0, 0, LeagueInvaders.width, LeagueInvaders.height);
 		g.setColor(Color.BLACK);
 		g.setFont(font);
-		g.drawString("texr", 50, 50);
+		g.drawString("League Invaders", 50, 50);
+		//TODO: Add all the fonts;
 	}
 	public void drawGameState(Graphics g) {
 		
