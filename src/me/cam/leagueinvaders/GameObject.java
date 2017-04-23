@@ -3,10 +3,11 @@ package me.cam.leagueinvaders;
 import java.awt.Graphics;
 
 public class GameObject {
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
 	private int width = 100;
 	private int height = 100;
+	protected boolean isAlive;
 	public GameObject(int x,int y,int width,int height) {
 		this.x = x;
 		this.y = y;
@@ -14,8 +15,7 @@ public class GameObject {
 		this.height = height;
 	}
 	public void update() {
-		x += 1;
-		y += 1;
+
 	}
 	public void draw(Graphics g) {
 		paintComponent(g);
