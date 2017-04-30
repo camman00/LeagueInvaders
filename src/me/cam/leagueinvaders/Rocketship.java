@@ -49,6 +49,6 @@ public class Rocketship extends GameObject {
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(Color.BLUE);
-		g.fillRect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
+		g.fillRect(x, y, width, height);
 	}
 }

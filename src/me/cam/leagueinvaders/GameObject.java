@@ -7,7 +7,7 @@ public class GameObject {
 	protected int y;
 	private int width = 100;
 	private int height = 100;
-	protected boolean isAlive;
+	protected boolean isAlive = true;
 	public GameObject(int x,int y,int width,int height) {
 		this.x = x;
 		this.y = y;
@@ -18,7 +18,7 @@ public class GameObject {
 
 	}
 	public void draw(Graphics g) {
-		paintComponent(g);
+		
 	}
 	public void paintComponent(Graphics g) {
 		g.fillRect(x, y, width,height);

@@ -22,7 +22,7 @@ public class LeagueInvaders {
 		jFrame.addKeyListener(gamePanel);
 		jFrame.setSize(width, height);
 		jFrame.setDefaultCloseOperation(jFrame.EXIT_ON_CLOSE);
-		jFrame.show(true);
+		jFrame.setVisible(true);
 	}
 
 }

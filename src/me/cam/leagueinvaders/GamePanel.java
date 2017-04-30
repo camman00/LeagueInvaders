@@ -35,7 +35,7 @@ public class GamePanel extends JPanel implements KeyListener,ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		repaint();
-		//gameObject.update();
+		//objectManager.update();
 		if(currentState == MENU_STATE){
 			updateMenuState();
 		}
@@ -51,7 +51,7 @@ public class GamePanel extends JPanel implements KeyListener,ActionListener {
 		timer.start();
 	}
 	public void paintComponent(Graphics g) {
-		//gameObject.draw(g);
+		//objectManager.draw(g);
 		if(currentState == MENU_STATE){
 			drawMenuState(g);
 		}
@@ -70,7 +70,7 @@ public class GamePanel extends JPanel implements KeyListener,ActionListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+		if(e.getKeyCode() == KeyEvent.VK_W) {
 			currentState++;
 		}
 		if(currentState > END_STATE){
@@ -87,6 +87,9 @@ public class GamePanel extends JPanel implements KeyListener,ActionListener {
 		}
 		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 			rocketship.down = true;
+		}
+		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+			objectManager.addObject(new Projectile(rocketship.x,rocketship.y,10,10));
 		}
 	}
 
@@ -126,6 +129,6 @@ public class GamePanel extends JPanel implements KeyListener,ActionListener {
 		objectManager.draw(g);
 	}
 	public void drawEndState(Graphics g) {
-		
+		//objectManager.draw(g);
 	}
 }
