@@ -21,6 +21,7 @@ public class GamePanel extends JPanel implements KeyListener,ActionListener {
 	private Timer timer;
 	private Rocketship rocketship;
 	private ObjectManager objectManager;
+	private boolean spacePressed = false;
 	//private GameObject gameObject;
 	public GamePanel() {
 		timer = new Timer(1000 / 60,this);
@@ -89,7 +90,7 @@ public class GamePanel extends JPanel implements KeyListener,ActionListener {
 			rocketship.down = true;
 		}
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-			objectManager.addObject(new Projectile(rocketship.x,rocketship.y,10,10));
+			spacePressed = true;
 		}
 	}
 
@@ -107,12 +108,23 @@ public class GamePanel extends JPanel implements KeyListener,ActionListener {
 		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
 			rocketship.down = false;
 		}
+		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+			spacePressed = false;
+		}
 	}
 	public void updateMenuState() {
 		
 	}
 	public void updateGameState() {
+		if(spacePressed == true)
+			objectManager.addObject(new Projectile(rocketship.x,rocketship.y,10,10));
 		objectManager.update();
+		objectManager.manageEnemies();
+		objectManager.checkCollision();
+		System.out.println(rocketship.isAlive);
+		if(rocketship.isAlive == false) {
+			currentState = END_STATE;
+		}
 	}
 	public void updateEndState() {
 		

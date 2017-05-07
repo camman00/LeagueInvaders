@@ -30,6 +30,7 @@ public class Rocketship extends GameObject {
 	}
 	@Override
 	public void update() {
+		super.update();
 		if(up) {
 			this.y -= speed;
 		}

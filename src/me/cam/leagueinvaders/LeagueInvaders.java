@@ -7,6 +7,7 @@ public class LeagueInvaders {
 	public static final int width = 500;
 	public static final int height = 800;
 	private GamePanel gamePanel;
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		LeagueInvaders leagueInvaders = new LeagueInvaders();
 	}
